@@ -63,24 +63,23 @@ header {
 
 
 .modal {
-  display: none; /* Initially hide the modal */
+  display: none; 
   align-items: center;
   justify-content: center;
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center the modal horizontally and vertically */
-  width: 70%; /* Adjust the width as needed */
-  max-width: 600px; /* Set a maximum width if required */
-  height: auto; /* Allow height to adjust based on content */
-  max-height: 80%; /* Set a maximum height if required */
+  transform: translate(-50%, -50%); 
+  width: 70%; 
+  max-width: 600px; 
+  height: auto; 
+  max-height: 80%; 
   background-color: rgb(255, 255, 255);
-  padding: 20px; /* Add padding for content */
+  padding: 20px; 
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Add any additional styles as needed */
 
 
 .modal-content {
