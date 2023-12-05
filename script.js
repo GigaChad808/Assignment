@@ -76,6 +76,7 @@ function showProductDetails(productId) {
 
  
   const modalContent = document.createElement('div');
+  modalContent.classList.add('modal-content');
   modalContent.innerHTML = `
     <h2>${selectedProduct.title}</h2>
     <img src="${selectedProduct.thumbnail}" alt="${selectedProduct.title}" />
