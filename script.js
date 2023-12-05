@@ -92,6 +92,7 @@ function showProductDetails(productId) {
  
   const modal = document.createElement('div');
   modal.classList.add('modal');
+  modal.style.display= 'flex';
   modal.appendChild(modalContent);
 
 
