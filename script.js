@@ -83,8 +83,9 @@ function showProductDetails(productId) {
     <p>Price: $${selectedProduct.price}</p>
     <p>Discount: ${selectedProduct.discountPercentage}%</p>
     <p>Category: ${selectedProduct.category}</p>
-  
-
+    <p>Stock: ${selectedProduct.stock}</p>
+    <p>Rating: ${selectedProduct.rating}</p>
+    <p>Brand: ${selectedProduct.brand}</p>
     <button onclick="closeProductDetails()">Close</button>
   `;
 
