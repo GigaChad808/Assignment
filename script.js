@@ -85,12 +85,29 @@ function showProductDetails(productId) {
   // Finding the selected product from all products based on its ID
   const selectedProduct = allProducts.find(product => product.id === productId);
 
-  // Creating modal content with detailed product information
+  // Creating modal content with detailed product information, image gallery, and description
   const modalContent = document.createElement('div');
   modalContent.classList.add('modal-content');
-  modalContent.innerHTML = `
+
+  // Create left column for images
+  const leftColumn = document.createElement('div');
+  leftColumn.classList.add('left-column');
+  leftColumn.innerHTML = `
     <h2>${selectedProduct.title}</h2>
-    <img src="${selectedProduct.thumbnail}" alt="${selectedProduct.title}" />
+    <div class="image-gallery"></div>
+  `;
+  const imageGallery = leftColumn.querySelector('.image-gallery');
+  selectedProduct.images.forEach(image => {
+    const galleryImage = document.createElement('img');
+    galleryImage.src = image;
+    galleryImage.alt = selectedProduct.title;
+    imageGallery.appendChild(galleryImage);
+  });
+
+  // Create right column for description
+  const rightColumn = document.createElement('div');
+  rightColumn.classList.add('right-column');
+  rightColumn.innerHTML = `
     <p>Description: ${selectedProduct.description}</p>
     <p>Price: $${selectedProduct.price}</p>
     <p>Discount: ${selectedProduct.discountPercentage}%</p>
@@ -100,6 +117,10 @@ function showProductDetails(productId) {
     <p>Brand: ${selectedProduct.brand}</p>
     <button onclick="closeProductDetails()">Close</button>
   `;
+
+  // Append left and right columns to modal content
+  modalContent.appendChild(leftColumn);
+  modalContent.appendChild(rightColumn);
 
   // Creating a modal element and appending the modal content to it
   const modal = document.createElement('div');
@@ -114,11 +135,4 @@ function showProductDetails(productId) {
   modalContent.querySelector('button').addEventListener('click', () => {
     document.body.removeChild(modal); 
   });
-}
-
-// Function to close the product details modal
-function closeProductDetails() {
-  // Removing the modal from the document body
-  const modal = document.querySelector('.modal');
-  document.body.removeChild(modal);
 }
