@@ -3,6 +3,8 @@
 
 This repository  contains files for a product display webpage built using HTML, CSS, JavaScript. The webpage fetches product data from a dummy API and dynamically displays products based on search queries and category selection.
 
+Link to the [GitHub page](https://gigachad808.github.io/Assignment/) 
+
 ## Table of Contents
 
 - [Features](#features)
